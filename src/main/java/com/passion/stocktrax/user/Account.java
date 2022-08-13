@@ -1,7 +1,8 @@
-package user;
+package com.passion.stocktrax.user;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Objects;
 
@@ -9,7 +10,9 @@ import java.util.Objects;
 public class Account {
 
     // Automatically generate user id, which will be unique for each user
-    private @Id @GeneratedValue Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String username;
     private String password;
 
@@ -51,9 +54,9 @@ public class Account {
             return true;
         if (!(o instanceof Account))
             return false;
-        Account employee = (Account) o;
-        return Objects.equals(this.username, employee.username) && Objects.equals(this.password, employee.password)
-                && Objects.equals(this.id, employee.id);
+        Account account = (Account) o;
+        return Objects.equals(this.username, account.username) && Objects.equals(this.password, account.password)
+                && Objects.equals(this.id, account.id);
     }
 
     @Override
@@ -63,6 +66,6 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Employee{" + "id=" + this.id + ", username='" + this.username +'}';
+        return "Account{" + "id=" + this.id + ", username='" + this.username +'}';
     }
 }
