@@ -37,7 +37,7 @@ public class AccountController {
 //        return accountRepository.findById(id);
 //    }
 
-    @GetMapping(path="/findAccount/{username}")
+    @GetMapping(path="/find/{username}")
     public @ResponseBody Optional<Account> getAccount(@PathVariable String username) {
         return accountRepository.findByUsername(username);
     }
