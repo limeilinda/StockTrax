@@ -12,8 +12,8 @@ public class StockController {
 
     private final String key = "cqGbhMruAI4HyqXtdprX6L7CRijjP5TobqZINbIK";
 
-    @GetMapping(path="/symbol={ticker}&startdate={date}")
-    public @ResponseBody String getStock(@PathVariable String ticker, @PathVariable String date) throws IOException {
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public @ResponseBody String getStock(@RequestParam String ticker, @RequestParam String date) throws IOException {
         URL url = new URL("https://api.stockdata.org/v1/data/eod?symbols=" + ticker + "&date_from=" + date + "&api_token=" + key);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
