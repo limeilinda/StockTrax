@@ -26,16 +26,16 @@ public class AccountController {
         return "Saved";
     }
 
-//        @GetMapping(path="/all")
-//        public @ResponseBody Iterable<Account> getAllAccounts() {
-//        //     This returns a JSON or XML with the users
-//            return accountRepository.findAll();
-//        }
-//
-//        @GetMapping(path="/find/{id}")
-//        public @ResponseBody Optional<Account> getAccount(@PathVariable Long id) {
-//            return accountRepository.findById(id);
-//        }
+    @GetMapping(path="/all")
+    public @ResponseBody Iterable<Account> getAllAccounts() {
+    //     This returns a JSON or XML with the users
+        return accountRepository.findAll();
+    }
+
+    @GetMapping(path="/findById/{id}")
+    public @ResponseBody Optional<Account> getAccount(@PathVariable Long id) {
+        return accountRepository.findById(id);
+    }
 
     @GetMapping(path="/find/{username}")
     public @ResponseBody Optional<Account> getAccount(@PathVariable String username) {
