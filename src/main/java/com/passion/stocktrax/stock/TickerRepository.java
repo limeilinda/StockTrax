@@ -9,4 +9,5 @@ public interface TickerRepository extends CrudRepository<Ticker, String> {
     Iterable<Ticker> findByStocknameContaining(String name);
 
     Iterable<Ticker> findBySymbolContaining(String symbol);
+
 }

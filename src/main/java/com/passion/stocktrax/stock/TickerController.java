@@ -33,7 +33,7 @@ public class TickerController {
 
     @GetMapping(path="/find/{ticker}")
     public @ResponseBody Optional<Ticker> getTicker(@PathVariable String ticker) {
-        return tickerRepository.findById(ticker);
+        return tickerRepository.findById(ticker.toUpperCase());
     }
 
     @GetMapping(path="/search/name/{name}")
