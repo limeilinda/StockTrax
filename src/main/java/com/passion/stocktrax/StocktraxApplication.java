@@ -13,13 +13,4 @@ public class StocktraxApplication {
 		SpringApplication.run(StocktraxApplication.class, args);
 	}
 
-	@Bean
-	public WebMvcConfigurer corsConfigurer() {
-		return new WebMvcConfigurer() {
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/stocks").allowedOrigins("http://localhost:3000");
-			}
-		};
-	}
 }

@@ -12,6 +12,7 @@ public class StockController {
 
     private final String key = "cqGbhMruAI4HyqXtdprX6L7CRijjP5TobqZINbIK";
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(value = "", method = RequestMethod.GET)
     public @ResponseBody String getStock(@RequestParam String ticker, @RequestParam String date) throws IOException {
         URL url = new URL("https://api.stockdata.org/v1/data/eod?symbols=" + ticker + "&date_from=" + date + "&api_token=" + key);
