@@ -7,7 +7,7 @@ Interested in stocks? Curious to see your performance but not ready to invest ye
 
 **StockTrax** is a web application that allows you to create a hypothetical investment portfolio to track performance against EOD (End of Day) data so you can practice your investment strategies without using your hard-earned savings. Spring Boot will retrieve historical and real time stock data using stockdata.org’s API call. **StockTrax** will hold a database of users, accounts and their investment portfolio using MySQL.
 
-## 💻 Techstack
+## 💻 Tech Stack
 
 - [**Java**](https://swr.vercel.app/) - Language
 - [**JavaScript**](https://www.javascript.com/) - Language
